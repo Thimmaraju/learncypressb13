@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <body>
+            <button id="myBtn">Click this button</button>
+            <p id="newpara"></p>
+            <input type="text"/>
+            <p id="myPara1"> This is first paragraph</p>
+            <p id="myPara2"> This is first paragraph2</p>
+    
+        </body>
+
+        <script>
+            document.getElementById("myPara1").innerHTML="Paragraph text changed while rendering with JavaScript"
+            document.getElementById("myBtn").onclick= displaysomethingnew;
+            function displaysomethingnew(){
+                document.getElementById("newpara").innerHTML=Date();
+            }
+        </script>
+    </head>
+</html>
