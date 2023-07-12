@@ -24,6 +24,8 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
+import 'cypress-file-upload';
+require('cypress-downloadfile/lib/downloadFileCommand')
 import addemployee from "../Pageobjects/PIM/addemployeepage.po"
 
 Cypress.Commands.add('login', (username, password) => { 

@@ -13,14 +13,14 @@ describe('Automation - Working With Links', function () {
          cy.get('.mainpage-welcome-sitename').should('contain.text', 'Wikimedia Commons');
      
      
-         cy.get('a').should('have.length', 684)
+         cy.get('a').should('have.length', 685)
 
          //Interview question
 
       cy.get('a').its('length').then((elelength) => {
         var lengthcount = elelength
         cy.log(lengthcount)
-        expect(lengthcount).to.equal(684)
+        expect(lengthcount).to.equal(685)
       })
 
       cy.get('.vector-menu-content-list').eq(5).find('a').its('length').then((elelength) => {
@@ -46,7 +46,7 @@ describe('Automation - Working With Links', function () {
         let y = txt.text()
         cy.log(y)
         expect(y).to.equal("Main page")
-        cy.writeFile('cypress/fixtures/module2/test7.json', { linktext: y});
+        cy.writeFile('cypress/fixtures/module2/test2.json', { "linktext":y});
       })
 
     })

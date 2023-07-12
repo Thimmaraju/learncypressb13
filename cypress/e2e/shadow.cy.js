@@ -11,9 +11,7 @@ describe('Automation - Working with Shadowroot elements 2', function () {
 
     cy.get('#shadow_host').shadow().find('[type="checkbox"]').check()
 
-     //cy.get('#shadow_host').shadow().find("input[type='text']").type("Raju")
-
-
+     cy.get('#shadow_host').shadow().find("input[type='text']").type("Raju")
 
   })
 

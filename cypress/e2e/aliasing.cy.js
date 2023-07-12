@@ -12,7 +12,7 @@ describe('Checkboxes', () => {
       cy.xpath("//input[@type='checkbox']").as('checkboxes')
       
       cy.xpath("//input[@type='checkbox']").first()
-        .as('firstcheckbox');
+        .as('Raju');
 
         cy.xpath("//input[@type='checkbox']").last()
         .as('lastcheckbox');
@@ -32,7 +32,7 @@ describe('Checkboxes', () => {
           expect(checkbox[0].checked).to.equal(false)
         })
 
-      cy.get('@firstcheckbox').check()
+      cy.get('@Raju').check()
       cy.get('@lastcheckbox').check()
     })
 
@@ -60,6 +60,8 @@ describe('Checkboxes', () => {
             expect(checkbox[0].checked).to.equal(false)
           })
   
+        cy.get('@firstcheckbox').check()
+
         cy.get('@firstcheckbox').check()
       })
   })
