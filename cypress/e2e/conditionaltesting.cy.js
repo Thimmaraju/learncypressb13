@@ -5,10 +5,12 @@ describe('Example to demo conditional testing in cypress', () => {
     })
 
     it.only('Check that if you find WikiVoyage on the page, then click on it and validate (Go to If)', () => {
-       
+     
+
+       // cy.get("locator").should("exist")
         cy.wait(3000)
         cy.get('body').then(($body) => {
-            if ($body.find('span[data-jsl10n="wikivoyage.Raju"]').length > 0) {
+            if ($body.find('span[data-jsl10n="wikivoyage.name"]').length > 0) {
           
                 cy.get('[data-jsl10n="wikivoyage.name"]').click()
                 cy.wait(3000)
@@ -48,9 +50,3 @@ describe('Example to demo conditional testing in cypress', () => {
 })
 
 
-// cy.get('[data-jsl10n="wiktionary.name"]').invoke('text').then((text) => {
-
-//     cy.writeFile('cypress/fixtures/test4.json', { extractedtxt: text })
-//     cy.writeFile('cypress/fixtures/module1/test7.txt', text)
-
-// })

@@ -1,4 +1,4 @@
-import login from '../../PageObjects/Login/loginpage.po'
+import login from '../Pageobjects/loginpage.po'
 
 
 describe('Validate Orange HRM Login functionality', function () {
@@ -8,9 +8,9 @@ describe('Validate Orange HRM Login functionality', function () {
 
     cy.session("Login session", () => {
       cy.visit("/web/index.php/auth/login")
-      cy.get(login.usernameinput).type("Admin")
-      cy.get(login.passwordInput()).type("admin123")
-      cy.xpath(login.loginBtn()).click()
+      cy.xpath(login.usernameinput()).type("Admin")
+      cy.get(login.passwordinput()).type("admin123")
+      cy.get(login.loginBtn()).click()
     })
 
   })
@@ -52,45 +52,34 @@ describe('Validate Orange HRM Login functionality', function () {
 
    })
 
-  // it('Validate Employee report ', function () {
+  it.only('Validate Employee report ', function () {
 
 
-  //   cy.visit("/web/index.php/time/displayEmployeeReportCriteria")
-  //   cy.wait(3000)
-
-  //   cy.xpath('(//input[@placeholder="Type for hints..."])[2]').type("Raju")
-
-  // })
+    cy.visit("/web/index.php/time/displayProjectReportCriteria")
 
 
-  // it('Attendance Total Summary Report', function () {
+  })
 
 
-  //   cy.visit("web/index.php/time/displayAttendanceSummaryReportCriteria")
-  //   cy.wait(3000)
-  //   //cy.xpath('(//input[@placeholder="Type for hints..."])[2]').type("Raju")
-
-  // })
-
-  // it('Add vacancy', function () {
+  it.only('Attendance Total Summary Report', function () {
 
 
-  //   cy.visit("web/index.php/recruitment/addJobVacancy")
-  //   cy.wait(3000)
-  //   //cy.xpath('(//input[@placeholder="Type for hints..."])[2]').type("Raju")
+    cy.visit("web/index.php/time/displayAttendanceSummaryReportCriteria")
+    cy.wait(3000)
+    //cy.xpath('(//input[@placeholder="Type for hints..."])[2]').type("Raju")
 
-  // })
+  })
 
-  // it('Add Job title ', function () {
-
-
-  //   cy.visit("/web/index.php/admin/saveJobTitle")
-  //   cy.wait(3000)
-
-  //   cy.AddJobTitle(jobtitledata.jobtitle, jobtitledata.jobdescription)
+  it('Add vacancy', function () {
 
 
-  // })
+    cy.visit("web/index.php/recruitment/addJobVacancy")
+    cy.wait(3000)
+    //cy.xpath('(//input[@placeholder="Type for hints..."])[2]').type("Raju")
+
+  })
+
+  
 
 })
 

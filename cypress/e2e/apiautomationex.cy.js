@@ -8,9 +8,9 @@ describe('Automation - API Automation - GET. PUT, POST and Delete Methods', func
 
       method:'GET', 
       url: 'https://reqres.in/api/users?page=2'
+      
 
-    }
-    ).then((response) => {
+    }).then((response) => {
 
       expect(response.status).equal(200);
       //comment for demo
@@ -86,13 +86,13 @@ describe('Automation - API Automation - GET. PUT, POST and Delete Methods', func
       cy.log(time)
       cy.log(idvalue)
 
-       cy.writeFile('cypress/fixtures/module1/test6.json', { "Id": idvalue });
+       cy.writeFile('cypress/fixtures/module1/test10.json', { "Id": idvalue });
 
     })
 
   })
 
-  it('Cypress Test Case - Understanding PUT Method', function () {
+  it.only('Cypress Test Case - Understanding PUT Method', function () {
 
     const payload = {
       "name": "Raju",
@@ -114,7 +114,7 @@ describe('Automation - API Automation - GET. PUT, POST and Delete Methods', func
   })
 
 
-  it('Cypress Test Case - Understanding DELETE Method', function () {
+  it.only('Cypress Test Case - Understanding DELETE Method', function () {
 
 
     cy.request('DELETE', 'https://reqres.in/api/users/2').then((response) => {

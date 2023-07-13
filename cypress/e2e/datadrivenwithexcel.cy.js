@@ -1,6 +1,6 @@
 ///<reference types="cypress"/>
 
-import data from "../../fixtures/ExceltoJson/testdata.json"
+import data from "../fixtures/ExceltoJson/user_data.json"
 
 describe('Automation - Working With Data driven testing json', function () {
 
@@ -11,7 +11,7 @@ describe('Automation - Working With Data driven testing json', function () {
             cy.get('#username').type(data.username);
             cy.get('#password').type(data.password);
             cy.get('button[type="submit"]').click();
-            cy.get('#flash').should("be.visible")
+            cy.get('.flash.error').should("be.visible")
 
           })
 
